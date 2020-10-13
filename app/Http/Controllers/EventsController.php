@@ -42,7 +42,7 @@ class EventsController extends Controller
     public function update(Event $event)
     {   
        
-        $event->update(request(['title','description']));
+        $event->update(request(['title','description','date','time','location','number','email']));
 
         //$event->title = request('title');
         //$event->description = request('description');
@@ -67,7 +67,12 @@ class EventsController extends Controller
 
         $attributes = request()->validate([
             'title' => ['required','min:3'],
-            'description' => ['required', 'min:3']
+            'description' => ['required', 'min:3'],
+            'date' => [],
+            'time'=> [],
+            'location' => [],
+            'number' => [],
+            'email' => []
         ]);
 
         Event::create($attributes);
@@ -83,5 +88,5 @@ class EventsController extends Controller
     }
 
     
-    //
+    
 }

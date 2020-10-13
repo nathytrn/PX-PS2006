@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('content')
+<div class="container">
+    <div class="content">
     <h1> Edit Details   </h1>
 
 
@@ -16,8 +18,50 @@
             </div>
         </div>
 
+
+        <div class ="field">
+            <label class="label" for="date">Date</label>
+
+            <div class="control">
+                    <input type = "date" name ="date" placeholder="date" class="input" required value = "{{ $event->date }}">
+            </div>
+        </div>
+
+        <div class ="field">
+            <label class="label" for="time">Time</label>
+
+            <div class="control">
+                    <input type = "time" name ="time" placeholder="time" class="input" required value = "{{ $event->time }}">
+            </div>
+        </div>
+
+        <div class ="field">
+            <label class="label" for="title">Location</label>
+
+            <div class="control">
+            <input type = "text" name ="location" placeholder="Event Location" class="input" required value = "{{ $event->location }}">
+            </div>
+        </div>
+
+        <div class ="field">
+            <label class="label" for="title">Number</label>
+
+            <div class="control">
+            <input type = "text" name ="number" placeholder="Number" class="input" required value = "{{ $event->number }}">
+            </div>
+        </div>
+
+        <div class ="field">
+            <label class="label" for="title">Email</label>
+
+            <div class="control">
+            <input type = "text" name ="title" placeholder="Email" class="input" required value = "{{ $event->email}}">
+            </div>
+        </div>
+
+
         <div class="field">
-            <label class="label" for=""></label>
+            <label class="label" for="description">Description</label>
 
             <div class="control">
                 <textarea name="description" class ="textarea" >{{ $event -> description }}</textarea>
@@ -29,6 +73,18 @@
                 <button type = "submit" class="button is-link">Update Event</button>
             </div>
         </div>
+
+
+        @if ($errors->any())
+        <div class="notification is-danger">
+            <ul>
+                @foreach ($errors->all() as $error) 
+                    <li>{{$error}}</li>
+                    
+                @endforeach
+            </ul>
+        </div>
+        @endif
 
 
 
@@ -44,4 +100,8 @@
         </div>
 
     </form>
+
+</div>
+
+</div>
 @endsection

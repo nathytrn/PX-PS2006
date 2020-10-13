@@ -3,7 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Artist;
+use Faker\Provider\bg_BG\PhoneNumber;
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use App\Image;
+use Illuminate\Support\Facades\Storage;
+
 
 class ArtistsController extends Controller
 {
@@ -17,6 +25,60 @@ class ArtistsController extends Controller
         $artists = \App\Artist::all();
 
         return view('artists.index', compact('artists'));
+    }
+
+    public function search(Request $request)
+    {
+        request()->validate([
+            'name' => ['max:20'],
+
+
+        ]);
+        $artists = DB::table('artists')->where('firstName','LIKE', '%' . $request->name . '%')->orWhere('lastName', 'LIKE', '%' . $request->name . '%')->get();
+
+        return view('artists.index', compact('artists'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function indexMusic()
+    {
+        
+        $artists = DB::table('artists')->where('creativeDiscipline1', 'Music')->orWhere('creativeDiscipline2', 'Music')->get();
+        
+
+        return view('artists.music', compact('artists'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function indexCrafts()
+    {
+        $artists = DB::table('artists')->where('creativeDiscipline1', 'Crafts')->orWhere('creativeDiscipline2', 'Crafts')->get();
+        //dd($artists);
+        return view('artists.craftsIndex', compact('artists'));
+    }
+
+    public function indexVisualArts()
+    {
+        $artists = DB::table('artists')->where('creativeDiscipline1', 'Visual Arts')->orWhere('creativeDiscipline2', 'Visual Arts')->get();
+
+        return view('artists.visualArtsIndex', compact('artists'));
+    }
+
+    public function indexPerformingArts()
+    {
+        $artists = DB::table('artists')->where('creativeDiscipline1', 'Performing Arts')->orWhere('creativeDiscipline2', 'Performing Arts')->get();
+
+        return view('artists.performingArtsIndex', compact('artists'));
     }
 
     /**
@@ -35,22 +97,64 @@ class ArtistsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        $attributes = request()->validate([
-            'name' => ['required','min:3'],
-            'email' => ['required', 'min:3'],
-            'phoneNumber' => ['required', 'min:3'],
-            'personas' => ['required', 'min:3'],
-            'age' => [],
-            'status' => [],
-            'location' => [],
-            'creativeDiscipline' => []
+
+        /**$attributes = request()->validate([
+            'firstName' => [],
+            'lastName' => [],
+            'DOB' => [],
+            'address' => [],
+            'postcode' => [],
+            'email' => [],
+            'phoneNumber' => [],
+            'bio' => [],
+            'creativeDiscipline1' => [],
+            'creativeDiscipline2' => [],
+            'facebook' => [],
+            'instagram' => [],
+            'note' => []
+        ]);
+        //Artist::create($attributes);
+        **/
+
+        request()->validate([
+            'firstName' => ['required','min:3','max:20'],
+            'lastName' => ['required','min:3','max:20'],
+            'DOB' => [],
+            'address' => [],
+            'postcode' => ['required','min:4','max:4'],
+            'email' => ['required','min:4','max:50'],
+            'phoneNumber' => [],
+            'bio' => [],
+            'creativeDiscipline1' => ['required','max:255'],
+            'creativeDiscipline2' => ['required','max:255'],
+            'facebook' => [],
+            'instagram' => [],
+            'note' => []
         ]);
 
-        Artist::create($attributes);
-
-
+        $artist = new Artist;
+        $artist->firstName = $request->firstName;
+        $artist->lastName =  $request->lastName;
+        $artist->DOB =  $request->DOB;
+        $artist->address =  $request->address;
+        $artist->postcode =  $request->postcode;
+        $artist->email =  $request->email;
+        $artist->bio =  $request->bio;
+        $artist->creativeDiscipline1 =  $request->creativeDiscipline1;
+        $artist->creativeDiscipline2 =  $request->creativeDiscipline2;
+        $artist->save();
+        
+        $profile = Auth::user();
+        $profile->artist_id = $artist->id;
+        $profile->save();
+         
+        
+        //Create image directory
+        $newDirectory = Auth::user()->artist_id;
+        $path = '/public/' . $newDirectory;
+        Storage::makeDirectory($path);
         return redirect('/artists');
     }
 
@@ -62,7 +166,18 @@ class ArtistsController extends Controller
      */
     public function show(Artist $artist)
     {
-        return view('artists.show', compact('artist'));
+
+        $images = \App\Image::where('artist_id', auth()->user()->artist_id)->get();
+
+        $images2 = \App\Image::where('artist_id', auth()->user()->artist_id)->get();
+
+        return view('artists.show2')->with(['images' => $images,'images2' => $images2,'artist' => $artist]);
+        //return view('artists.show2', compact('artist'));
+    }
+
+    public function page(Artist $artist)
+    {
+        return view('handleArtist.blade.php',compact('artist'));
     }
 
     /**
@@ -76,6 +191,23 @@ class ArtistsController extends Controller
         return view('artists.edit', compact('artist'));
     }
 
+     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+      public function editArtist(Artist $artist)
+    {
+        
+        abort_if($artist->id !== Auth::user()->artist_id, 403);
+
+        return view('artists.edit', compact('artist'));
+
+
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -85,7 +217,24 @@ class ArtistsController extends Controller
      */
     public function update(Artist $artist)
     {
-        $artist->update(request(['name','email','phoneNumber','personas','age','status','location','creativeDiscipline']));
+
+        request()->validate([
+            'firstName' => ['required','min:3','max:20'],
+            'lastName' => ['required','min:3','max:20'],
+            'DOB' => [],
+            'address' => [],
+            'postcode' => ['required','min:4','max:4'],
+            'email' => ['required','min:4','max:50'],
+            'phoneNumber' => [],
+            'bio' => [],
+            'creativeDiscipline1' => ['required','max:255'],
+            'creativeDiscipline2' => ['required','max:255'],
+            'facebook' => [],
+            'instagram' => [],
+            'note' => []
+        ]);
+
+        $artist->update(request(['firstName','lastName','DOB','address','postcode','email','phoneNumber','bio','creativeDiscipline1','creativeDiscipline2','facebook','instagram','note','creativeDetails1','creativeDetails2']));
 
         return redirect('/artists');
     }

@@ -9,4 +9,9 @@ class Event extends Model
 {
     //
     protected $guarded = [];
+
+
+    public function artist(){
+        return $this->belongsTo(Artist::class);
+    }
 }
