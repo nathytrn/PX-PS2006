@@ -191,7 +191,7 @@
 </style>
     <div class="center">
         <h2 class="title">Events</h2>
-      </div>
+    </div>
 
     <section class="section styleIntro" style="background-image: url('https://lmwi3dfcr03a91a81vq6o81s-wpengine.netdna-ssl.com/wp-content/uploads/2019/05/Malamala_cokeparty_sept2018_hires_199_of_200_.jpg')">
         <div class="container has-text-centered">
@@ -201,7 +201,7 @@
                         <figure class="image">
                             <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                         </figure>
-                        <p class="title" style="color: white ">Spring Event</p>
+                        <p class="title" style="color: white ">Event</p>
                         <p class="subtitle" style="color: white ">To be updated</p>
                     </article>
                 </div>
@@ -211,7 +211,7 @@
                         <figure class="image">
                             <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                         </figure>
-                        <p class="title" style="color: white ">Spring Event</p>
+                        <p class="title" style="color: white ">Event</p>
                         <p class="subtitle" style="color: white ">To be updated</p>
                         
                     </article>
@@ -221,7 +221,7 @@
                         <figure class="image">
                             <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                         </figure>
-                        <p class="title" style="color: white ">Spring Event</p>
+                        <p class="title" style="color: white ">Event</p>
                         <p class="subtitle" style="color: white ">To be updated</p>
                     </article>
                 </div>
@@ -230,7 +230,7 @@
                         <figure class="image">
                             <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                         </figure>
-                        <p class="title" style="color: white ">Spring Event</p>
+                        <p class="title" style="color: white ">Event</p>
                         <p class="subtitle" style="color: white ">To be updated</p>
                     </article>
                 </div>
@@ -243,7 +243,7 @@
                         <figure class="image">
                             <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                         </figure>
-                        <p class="title" style="color: white ">Spring Event</p>
+                        <p class="title" style="color: white ">Event</p>
                         <p class="subtitle" style="color: white ">To be updated</p>
                     </article>
                 </div>
@@ -252,7 +252,7 @@
                         <figure class="image">
                             <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                         </figure>
-                        <p class="title" style="color: white ">Spring Event</p>
+                        <p class="title" style="color: white ">Event</p>
                         <p class="subtitle" style="color: white ">To be updated</p>
                     </article>
                 </div>
@@ -261,7 +261,7 @@
                         <figure class="image">
                             <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                         </figure>
-                        <p class="title" style="color: white ">Spring Event</p>
+                        <p class="title" style="color: white ">Event</p>
                         <p class="subtitle" style="color: white ">To be updated</p>
                     </article>
                 </div>
@@ -270,7 +270,7 @@
                         <figure class="image">
                             <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                         </figure>
-                        <p class="title" style="color: white ">Spring Event</p>
+                        <p class="title" style="color: white ">Event</p>
                         <p class="subtitle" style="color: white ">To be updated</p>
                     </article>
                 </div>

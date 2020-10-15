@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+
 class ImageController extends Controller
 {
     public function index() {
@@ -18,13 +19,14 @@ class ImageController extends Controller
     public function show() {
         
 
-        $images = \App\Image::where('artist_id', auth()->user()->artist_id)->get();
+        $images = \App\Image::where('artist_id', auth()->user()->artist_id)->where('type','Avatar')->orwhere('type','Image Gallery')->get();
+        $videos = \App\Image::where('artist_id', auth()->user()->artist_id)->where('type','Video')->get();
 
-        return view('handleArtistGallery')->with(['images' => $images]);
+        return view('handleArtistGallery')->with(['images' => $images, 'videos' => $videos]);
     }
  
     public function save(Request $request)
-    {
+    {   
         request()->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -44,7 +46,7 @@ class ImageController extends Controller
             } else
             $fileName =  "image-Artist-".time().'.'.$request->image->getClientOriginalExtension();
             
-            $path = $request->image->storeAs($pathDir, $fileName);;
+            $path = $request->image->storeAs($pathDir, $fileName);
 
             $newPath = '/storage/' . $artistID . '/'. $fileName;
             
@@ -62,6 +64,36 @@ class ImageController extends Controller
  
         }
  
+    }
+
+    public function saveVideo(Request $request)
+    {
+
+        if($request->file('video')){
+
+            $artistID = Auth::user()->artist_id;
+            $pathDir = '/public/' . $artistID;
+
+            
+            $fileName =  "Video-Artist-".time().'.'.$request->video->getClientOriginalExtension();
+            
+            $request->video->storeAs($pathDir, $fileName);
+
+            $newPath = '/storage/' . $artistID . '/'. $fileName;
+            
+            $image = new Image;
+            $image->image = $fileName;
+            $image->type = 'Video';
+            $image->description = $request->description;
+            $image->artist_id = auth()->user()->artist_id ;
+            $image->url= $newPath;
+            $image->save();
+            
+            return Response()->json([
+                "Video" => $fileName
+            ], Response::HTTP_OK);
+        }
+
     }
 
     

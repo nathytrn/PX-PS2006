@@ -30,7 +30,7 @@
                 <p></p>
     
                 {{--<div class="columns is-centered" style="padding: 2rem"> --}}
-                    @foreach ($events as $event)
+                    @foreach ($events as $events)
                     <div class="hero-body">
                         <div class="container has-text-centered">
                             <div class="columns is-vcentered">
@@ -41,10 +41,10 @@
                                 </div>
                                 <div class="column is-6 is-offset-1">
                                     <h1 class="title is-2">
-                                        Spring Event
+                                        {{$events->title}}
                                     </h1>
                                     <h2 class="subtitle is-4">
-                                        To be updated
+                                        {{$events->description}}
                                     </h2>
                                     <br>
                                     <p class="has-text-centered">
@@ -77,42 +77,7 @@
                                 </div>
                                 <div class="column is-6 is-offset-1">
                                     <h1 class="title is-2">
-                                        Autumn Event
-                                    </h1>
-                                    <h2 class="subtitle is-4">
-                                        To be updated
-                                    </h2>
-                                    <br>
-                                    <p class="has-text-centered">
-                                        <a class="button is-medium is-info is-outlined">
-                                            Craft
-                                        </a>
-                                        <a class="button is-medium is-info is-outlined">
-                                            Music
-                                        </a>
-                                        <a class="button is-medium is-info is-outlined">
-                                            Performing Arts
-                                        </a>
-                                        <a class="button is-medium is-info is-outlined">
-                                            Visual Arts
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-body">
-                        <div class="container has-text-centered">
-                            <div class="columns is-vcentered">
-                                <div class="column is-5">
-                                    <figure class="image is-4by3">
-                                        <img src="https://lh3.googleusercontent.com/proxy/rb30-rOYYk17xc6PeFwwyTmZtnNisB_8ccN7o_tRcipkfGAf1u-TenKhkao3c6V5dk1lL6NSp534mVJ5Wnbx_rYtTjl3RrmG2nkZk4YnRi17Ll3jW2Z-w_6M46xQqttw" alt="Description">
-                                    </figure>
-                                </div>
-                                <div class="column is-6 is-offset-1">
-                                    <h1 class="title is-2">
-                                        Summer Event
+                                        Event
                                     </h1>
                                     <h2 class="subtitle is-4">
                                         To be updated
@@ -147,7 +112,42 @@
                                 </div>
                                 <div class="column is-6 is-offset-1">
                                     <h1 class="title is-2">
-                                        Winter Event
+                                        Event
+                                    </h1>
+                                    <h2 class="subtitle is-4">
+                                        To be updated
+                                    </h2>
+                                    <br>
+                                    <p class="has-text-centered">
+                                        <a class="button is-medium is-info is-outlined">
+                                            Craft
+                                        </a>
+                                        <a class="button is-medium is-info is-outlined">
+                                            Music
+                                        </a>
+                                        <a class="button is-medium is-info is-outlined">
+                                            Performing Arts
+                                        </a>
+                                        <a class="button is-medium is-info is-outlined">
+                                            Visual Arts
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-body">
+                        <div class="container has-text-centered">
+                            <div class="columns is-vcentered">
+                                <div class="column is-5">
+                                    <figure class="image is-4by3">
+                                        <img src="https://exclusivesmedia.webjet.com.au/uploads/2019/04/6-day-Fiji-Islands-Blue-Lagoon-cruise-9.jpg" alt="Description">
+                                    </figure>
+                                </div>
+                                <div class="column is-6 is-offset-1">
+                                    <h1 class="title is-2">
+                                        Event
                                     </h1>
                                     <h2 class="subtitle is-4">
                                         To be updated
@@ -182,7 +182,7 @@
                                 </div>
                                 <div class="column is-6 is-offset-1">
                                     <h1 class="title is-2">
-                                        Spring Event
+                                        Event
                                     </h1>
                                     <h2 class="subtitle is-4">
                                         To be updated

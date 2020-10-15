@@ -55,8 +55,10 @@ class HomeController extends Controller
 
 
     public function updateArtist(User $user){
+        
+        $user->artist_id = request()->artist_id;
         $user->update(request(['is_artist'])); 
-
+        
 
         $requests = \App\Order::all();
         $users = \App\User::all();

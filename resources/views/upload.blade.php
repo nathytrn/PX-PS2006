@@ -146,6 +146,69 @@
                             </div>
                         </div>      
                     </div>
+
+                    <br>
+                    
+
+                    <div class="card events-card">
+                        <header class="card-header">
+                            <p class="card-header-title" >
+                             Upload Video (Max: 50MB)                                            
+                            </p>
+
+                            
+                                
+                            
+                        </header>
+                        <div class="card-table">
+                            <div class="content">
+
+                                <form method="POST" enctype="multipart/form-data" action="/artist/uploadVideo" >
+                                    @csrf
+                                    <div class="row">
+                                        
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="file" name="video" placeholder="Choose Video" >
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="label" for="description">Video Description</label>
+
+                                                <div class="control">
+                                                    <input type = "text" name ="description"  class="input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                         
+
+                                        <br>
+                                          
+                                          
+                                        <div class="col-md-12">
+                                            <button type="submit" class="button is-primary">Submit</button>
+                                        </div>
+
+                                        @if ($errors->any())
+                                        <div class="notification is-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error) 
+                                                    <li>{{$error}}</li>
+                                                    
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        @endif
+                                    </div>     
+                                </form>
+                            </div>
+                        </div>      
+                    </div>
                 </div>      
             </div>
 

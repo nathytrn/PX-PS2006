@@ -62,6 +62,37 @@
                         <header class="card-header">                                                    
                             
                         </header>
+
+
+                        <div class="card-table">                            
+                            @foreach ( $videos as $videos)
+                            <div class="tile is-parent">
+                                <article class="tile is-child notification is-white">
+                                    <p class="title">{{ $videos->type }}</p>
+                                    <p class="subtitle">{{ $videos->description }}</p>
+                                    
+                                        <video width="1280" height="720" controls loop>
+                                            <source src="{{ asset($videos->url) }}" type="video/mp4">
+                                            
+                                       </video>
+                                    
+                                </article>
+
+                                <form method="POST" action="/artist/gallery/{{$videos->id}} ">
+                                    {{method_field('DELETE')}}
+                                    {{ csrf_field()}}
+                                    <div class="field">
+                                        <div class="control">   
+                                            <button type = "submit" class="button">Delete Video</button>
+                                        </div>
+                                    </div>
+                            
+                                </form>
+                            </div>                  
+                            @endforeach
+                                
+                        </div>
+
                         <div class="card-table">                            
                             @foreach ( $images as $images)
                             <div class="tile is-parent">

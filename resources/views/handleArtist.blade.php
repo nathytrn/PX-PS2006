@@ -262,7 +262,7 @@
                                                 <td>{{ $orders->title}}</td>
                                                 <td>{{ $orders->user->name}} </td>
                                                 <td>{{  $orders->description }}</td>
-                                                <td>{{  $orders->stage }}</td>
+                                                <td>{{  $orders->stage }}</td>  
                                                 <td>                                        
                                                 <a class="button is-primary" href="/orders/artist/{{$orders->id}}">Modify</a>                                              
                                                 </td>

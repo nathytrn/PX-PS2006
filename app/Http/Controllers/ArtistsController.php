@@ -166,13 +166,13 @@ class ArtistsController extends Controller
      */
     public function show(Artist $artist)
     {
+        
+        $images = \App\Image::where('artist_id', $artist->id)->where('type','Image Gallery')->get();
+        $videos = \App\Image::where('artist_id', $artist->id)->where('type','Video')->get();
+        
 
-        $images = \App\Image::where('artist_id', auth()->user()->artist_id)->get();
-
-        $images2 = \App\Image::where('artist_id', auth()->user()->artist_id)->get();
-
-        return view('artists.show2')->with(['images' => $images,'images2' => $images2,'artist' => $artist]);
-        //return view('artists.show2', compact('artist'));
+        return view('artists.show2')->with(['images' => $images,'videos' => $videos,'artist' => $artist]);
+        
     }
 
     public function page(Artist $artist)

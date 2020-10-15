@@ -338,7 +338,15 @@
                                                           <div>
                                                             <input type="checkbox" name = "is_artist" value ="0">        
                                                             <label for="is_artist">N</label>
-                                                        </div>
+
+                                                          </div>
+
+                                                         <div>
+                                                                <label for="artist_id">Artist ID: </label>
+                                                                <input type="number" name ="artist_id">        
+                                                       
+                                                          </div>
+                                                       
                                                           
 
                                                     

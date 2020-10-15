@@ -20,7 +20,7 @@
        <style> 
 
         body {
-            background-blend-mode: color;background-color: rgba(255,255,255,0.5) !important;
+            background-blend-mode: color;background-color: rgba(255,255,255,0.6) !important;
         background-image: url("https://st.depositphotos.com/2200898/2794/v/950/depositphotos_27946241-stock-illustration-classic-wallpaper-seamless-vintage-flower.jpg"); 
 
         /*
@@ -28,6 +28,7 @@
 
         font-family: 'Marcellus SC', serif;
         font-size: 22px;
+        font-weight: bold;
 
         }
         

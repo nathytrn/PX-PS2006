@@ -97,6 +97,7 @@ Route::get('artist/home/orders', 'ArtistOrdersController@show' );
 Route::get('/artist/gallery','ImageController@show')->middleware('admin.or.artist');
 Route::get('/artist/upload', 'ImageController@index')->middleware('admin.or.artist');
 Route::post('/artist/upload', 'ImageController@save')->middleware('admin.or.artist');
+Route::post('/artist/uploadVideo', 'ImageController@saveVideo')->middleware('admin.or.artist');
 Route::delete('/artist/gallery/{image}','ImageController@delete')->middleware('admin.or.artist');
 
 
