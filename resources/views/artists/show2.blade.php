@@ -76,7 +76,7 @@
       </div>
       <div class="column">
         <!-- Skills -->
-        <div class="card" style=" height: 459px; overflow:scroll;" >
+        <div class="card" style=" height: 459px; overflow-y:scroll; overflow-x: hidden;" >
           <div class="card-content skills-content">
             <h3 class="title is-4"><center>Bio</center></h3>
             <div class="content" style="font-style: italic;">
