@@ -30,7 +30,7 @@
     <div class="columns has-same-height is-gapless">
       <div class="column">
         <!-- Profile -->
-        <div class="card" style = "height: 520px;">
+        <div class="card" style = "height: 459px;">
           <div class="card-content">
               
             <h3 class="title is-4"><center>Profile</center></h3>
@@ -76,10 +76,10 @@
       </div>
       <div class="column">
         <!-- Skills -->
-        <div class="card" style=" height: 520px; overflow:hidden;" >
+        <div class="card" style=" height: 459px; overflow:scroll;" >
           <div class="card-content skills-content">
             <h3 class="title is-4"><center>Bio</center></h3>
-            <div class="content" >
+            <div class="content" style="font-style: italic;">
                     {{$artist->bio}}
                     Paula has been carving since he was a young boy in his village Fulaga, in the Lau Group. The village of Fulaga is renown throughout Fiji for its long tradition of high-skilled wood carvers. Paula’s father was a carver, and Paula learnt how to carve tanoa, war clubs and figures from watching him. He moved to Suva in 1966 to attend Bible School. He left after 2 years and continued to carve. This time for the tourist markets on Viti Levu, the main island of Fiji. In 1994 went to the University of the South Pacific as a Part Time Tutor and later was invited by the Oceania Centre by Professor Epeli Hau’ofa to explore contemporary, creative wood carving.
             </div>
