@@ -137,7 +137,7 @@
     </div>
   </section>
 
-  {{--
+  
   <div class="section-dark my-work" id="my-work">
     <div class="container">
       <div
@@ -152,7 +152,7 @@
           <a href="#">
             <figure
               class="image is-2by1 work-item"
-              style="background-image: url('https://picsum.photos/320/180?image=0');"
+              style="background-image: url('{{ asset('/storage/public/'.$artist->id.'/grid1.jpg') }} ');  background-size: cover;"
             ></figure>
           </a>
         </div>
@@ -160,7 +160,17 @@
           <a href="#">
             <figure
               class="image is-2by1 work-item"
-              style="background-image: url('https://picsum.photos/320/180?image=10');"
+              style="background-image: url('{{ asset('/storage/public/'.$artist->id.'/grid2.jpg') }} ');  background-size: cover;"
+            ></figure>
+
+            
+          </a>
+        </div>
+        <div class="column is-3">
+          <a href="#">
+            <figure
+              class="image is-2by1 work-item"
+              style="background-image: url('{{ asset('/storage/public/'.$artist->id.'/grid3.jpg') }} ');  background-size: cover;"
             ></figure>
           </a>
         </div>
@@ -168,7 +178,7 @@
           <a href="#">
             <figure
               class="image is-2by1 work-item"
-              style="background-image: url('https://picsum.photos/320/180?image=20');"
+              style="background-image: url('{{ asset('/storage/public/'.$artist->id.'/grid4.jpg') }} ');  background-size: cover;"
             ></figure>
           </a>
         </div>
@@ -176,7 +186,7 @@
           <a href="#">
             <figure
               class="image is-2by1 work-item"
-              style="background-image: url('https://picsum.photos/320/180?image=30');"
+              style="background-image: url('{{ asset('/storage/public/'.$artist->id.'/grid5.jpg') }} ');  background-size: cover;"
             ></figure>
           </a>
         </div>
@@ -184,7 +194,7 @@
           <a href="#">
             <figure
               class="image is-2by1 work-item"
-              style="background-image: url('https://picsum.photos/320/180?image=40');"
+              style="background-image: url('{{ asset('/storage/public/'.$artist->id.'/grid6.jpg') }} ');  background-size: cover;"
             ></figure>
           </a>
         </div>
@@ -192,7 +202,7 @@
           <a href="#">
             <figure
               class="image is-2by1 work-item"
-              style="background-image: url('https://picsum.photos/320/180?image=50');"
+              style="background-image: url('{{ asset('/storage/public/'.$artist->id.'/grid7.jpg') }} ');  background-size: cover;"
             ></figure>
           </a>
         </div>
@@ -200,15 +210,7 @@
           <a href="#">
             <figure
               class="image is-2by1 work-item"
-              style="background-image: url('https://picsum.photos/320/180?image=60');"
-            ></figure>
-          </a>
-        </div>
-        <div class="column is-3">
-          <a href="#">
-            <figure
-              class="image is-2by1 work-item"
-              style="background-image: url('https://picsum.photos/320/180?image=70');"
+              style="background-image: url('{{ asset('/storage/public/'.$artist->id.'/grid8.jpg') }} ');  background-size: cover;"
             ></figure>
           </a>
         </div>
@@ -216,7 +218,7 @@
     </div>
   </div>
 
-  --}}
+  
  
 
   

@@ -43,12 +43,36 @@ class ImageController extends Controller
 
             if ( $type == 'Avatar') {
             $fileName =  "avatar".'.'."jpg";
-            } else
-            $fileName =  "image-Artist-".time().'.'.$request->image->getClientOriginalExtension();
+            } else if ( $type == 'Grid 1') {
+                $fileName =  "grid1".'.'."jpg";
+                } 
+                else if ( $type == 'Grid 2') {
+                    $fileName =  "grid2".'.'."jpg";
+                    } 
+                    else if ( $type == 'Grid 3') {
+                        $fileName =  "grid3".'.'."jpg";
+                        } 
+                        else if ( $type == 'Grid 4') {
+                            $fileName =  "grid4".'.'."jpg";
+                            } 
+                            else if ( $type == 'Grid 5') {
+                                $fileName =  "grid5".'.'."jpg";
+                                } 
+                                else if ( $type == 'Grid 6') {
+                                    $fileName =  "grid6".'.'."jpg";
+                                    } 
+                                    else if ( $type == 'Grid 7') {
+                                        $fileName =  "grid7".'.'."jpg";
+                                        } 
+                                        else if ( $type == 'Grid 8') {
+                                            $fileName =  "grid8".'.'."jpg";
+                                            } else {
+                                                $fileName =  "image-Artist-".time().'.'.$request->image->getClientOriginalExtension();
+                                            }
             
             $path = $request->image->storeAs($pathDir, $fileName);
 
-            $newPath = '/storage/' . $artistID . '/'. $fileName;
+            $newPath = '/storage/public/' . $artistID . '/'. $fileName;
             
             $image = new Image;
             $image->image = $fileName;
@@ -79,7 +103,7 @@ class ImageController extends Controller
             
             $request->video->storeAs($pathDir, $fileName);
 
-            $newPath = '/storage/' . $artistID . '/'. $fileName;
+            $newPath = '/storage/public/' . $artistID . '/'. $fileName;
             
             $image = new Image;
             $image->image = $fileName;

@@ -63,6 +63,8 @@ Route::delete('/artists/{artist}','ArtistsController@delete')->middleware('admin
 
 Route::patch('/admin/users/{user}','HomeController@updateArtist')->middleware('admin');
 
+Route::delete('/artists/{artist}','ArtistsController@destroy')->middleware('admin.or.artist'); 
+
 Auth::routes();
 
 

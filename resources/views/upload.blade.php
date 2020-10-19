@@ -119,6 +119,14 @@
                                             <select name="type" id="type" class = "select">
                                                 <option value="Image Gallery">Image Gallery</option>
                                                 <option value="Avatar">Avatar</option>
+                                                <option value="Grid 1">Grid 1</option>
+                                                <option value="Grid 2">Grid 2</option>
+                                                <option value="Grid 3">Grid 3</option>
+                                                <option value="Grid 4">Grid 4</option>
+                                                <option value="Grid 5">Grid 5</option>
+                                                <option value="Grid 6">Grid 6</option>
+                                                <option value="Grid 7">Grid 7</option>
+                                                <option value="Grid 8">Grid 8</option>
                                                 
                                             </select>
                                          </div>  
