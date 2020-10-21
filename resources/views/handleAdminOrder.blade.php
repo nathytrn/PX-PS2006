@@ -15,7 +15,7 @@
                     <li><a class="is-active">Dashboard</a></li>
                     <li><a>Artist</a></li>
                     <li><a>Users</a></li>
-                    <li><a>Other</a></li>
+                    <li><a>Events</a></li>
                 </ul>
                 <p class="menu-label">
                     Administration
@@ -27,14 +27,19 @@
                         <ul>
                             <li><a>Artist List</a></li>
                             <li><a>Plugins</a></li>
-                            <li><a>Add an artist</a></li>
+                            <li><a href="/artists/create">Add an artist</a></li>
                             <li><a>Edit an artist</a></li>
                         </ul>
                     </li>
-                    <li><a>Invitations</a></li>
-                    <li><a>Cloud Storage Environment Settings</a></li>
-                    <li><a>Authentication</a></li>
-                    <li><a>Payments</a></li>
+                    <li>
+                        <a>Manage Events</a>
+                        <ul>
+                            <li><a>Event List</a></li>
+                            <li><a>Plugins</a></li>
+                            <li><a href="/events/create">Add an event</a></li>
+                            <li><a>Edit an event</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <p class="menu-label">
                     Transactions
@@ -154,7 +159,18 @@
                                 </div>
                                 @endif
                             </form>
-
+                               
+                            
+                            <form method="POST" action="/orders/{{ $order->id}} ">
+                                {{method_field('DELETE')}}
+                                {{ csrf_field()}}
+                                <div class="field">
+                                    <div class="control">   
+                                        <button type = "submit" class="button">Delete Order</button>
+                                    </div>
+                                </div>
+                        
+                            </form>
                                 
                         </div>
                         

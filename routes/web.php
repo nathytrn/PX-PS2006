@@ -85,6 +85,8 @@ Route::post('/artists/{artist}/orders','ArtistOrdersController@store');
  
 Route::get('artist/home/orders', 'ArtistOrdersController@show' );
 
+Route::delete('/orders/{order}','ArtistOrdersController@delete')->middleware('admin');
+
 //Route::get('admin/home/orders', 'ArtistOrdersController@showAdmin' );
 
 // Create image upload form

@@ -76,4 +76,10 @@ class ArtistOrdersController extends Controller
         //return view('handleArtist2', compact('artist'));
     }
 
+    public function delete(Order $order)
+    {
+        $order->delete();
+        return redirect('/home');
+    }
+
 }
