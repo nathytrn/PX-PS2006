@@ -35,8 +35,7 @@
                 <img src="{{ asset('/storage/public/'.$artists->id.'/avatar.jpg') }}" style="width:440px; 
                 height:333px; max-width: 500px; max-height: 333px; object-fit: fill;">
                 <h3>{{$artists->firstName}} {{$artists->lastName}}</h3>
-                <p class="w3-opacity">CEO & Founder</p>
-                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                
                 <p><button class="button is-primary is-fullwidth">Contact</button></p>
               </div>
                 </a>
